@@ -1,15 +1,10 @@
+import React from 'react'
 
-import './App.css'
-
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      
-      <h1 className='text-red-800'>New Project</h1>
-     
-    </>
+    <div>
+      New project Starting with tailwind
+    </div>
   )
 }
 
