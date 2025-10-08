@@ -1,6 +1,6 @@
 import React from 'react'
 
-const backGround = () => {
+const BackGround = () => {
     return (
         <>
             <div className='absolute top-[5%] bg-sky-200 w-full p-10 flex justify-center text-zinc-600 text-xl font-semibold'> Documents.</div>
@@ -10,4 +10,4 @@ const backGround = () => {
     )
 }
 
-export default backGround
+export default BackGround
