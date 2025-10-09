@@ -1,5 +1,5 @@
 import React from 'react'
-import BackGround from './Components/BackGround'
+import BackGround from './Components/backGround'
 import ForGround from './Components/ForGround'
 
 const App = () => {
