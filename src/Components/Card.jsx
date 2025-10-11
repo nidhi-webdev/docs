@@ -17,7 +17,7 @@ const Card = () => {
                         </span>
                         
                     </div>
-                    <div className='tag w-full py-4 bg-sky-200'> </div>
+                    <div className='tag w-full py-4 bg-green-600'> Download Now </div>
                      </div>
 
             </div>
