@@ -3,7 +3,8 @@ import { FaRegFileAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 
 
-const Card = () => {
+const Card = ({data}) => {
+    console.log("Data from Card" ,data)
     
     return (
        
