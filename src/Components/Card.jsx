@@ -8,6 +8,19 @@ import { IoMdCloseCircle } from "react-icons/io";
 const Card = ({ data }) => {
     console.log("Data from Card", data.desc)
 
+    // Color mapping 
+    const getTagColor = (color) => {
+        const colorMap = {
+            green: 'bg-green-600',
+            sky: 'bg-sky-600', 
+            red: 'bg-red-600',
+            blue: 'bg-blue-600',
+            yellow: 'bg-yellow-600',
+            purple: 'bg-purple-600'
+        }
+        return colorMap[color] || 'bg-gray-600'
+    }
+
     return (
 
         <div className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
@@ -22,7 +35,7 @@ const Card = ({ data }) => {
 
                 </div>
                 {data.tag.isOpen && (
-                    <div className='tag w-full py-4 bg-green-600 flex items-center justify-center'>
+                    <div className={`tag w-full py-4 ${getTagColor(data.tag.tagColor)} flex items-center justify-center`}>
                         <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
                     </div>
                 ) }
