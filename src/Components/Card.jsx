@@ -17,16 +17,16 @@ const Card = ({ data }) => {
                 <div className='flex items-center justify-between mb-3 px-8 py-3 '>
                     <h5> {data.filesize} </h5>
                     <span className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
-                        
-                    {data.close ? <IoMdCloseCircle /> : <LuDownload size=".8em" color='#fff' /> }
-                            
-                        
-                        
+                        {data.close ? <IoMdCloseCircle /> : <LuDownload size=".8em" color='#fff' />}
                     </span>
 
                 </div>
-                <div className='tag w-full py-4 bg-green-600 flex items-center justify-center'>
-                    <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3> </div>
+                {data.tag.isOpen ? (
+                    <div className='tag w-full py-4 bg-green-600 flex items-center justify-center'>
+                        <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
+                    </div>
+                ) : null}
+
             </div>
         </div>
 
