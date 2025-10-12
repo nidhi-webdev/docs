@@ -17,8 +17,11 @@ const Card = ({ data }) => {
                 <div className='flex items-center justify-between mb-3 px-8 py-3 '>
                     <h5> {data.filesize} </h5>
                     <span className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
-                        <IoMdCloseCircle />
-                        <LuDownload size=".8em" color='#fff' />
+                        
+                    {data.close ? <IoMdCloseCircle /> : <LuDownload size=".8em" color='#fff' /> }
+                            
+                        
+                        
                     </span>
 
                 </div>

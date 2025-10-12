@@ -5,7 +5,7 @@ function ForGround() {
     const data = [
         { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
-          close: true,
+          close: false,
           tag: {isOpen: false , tagTitle: "Download Now", tagColor: "green" }
         }
     ]
