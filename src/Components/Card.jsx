@@ -24,7 +24,7 @@ const Card = ({ data, reference }) => {
 
     return (
 
-        <motion.div drag className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
+        <motion.div drag dragConstraints={reference} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
             <FaRegFileAlt />
             <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
             <div className='footer  bottom-0 absolute w-full left-0'>
