@@ -10,13 +10,13 @@ function ForGround() {
         },
          { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
-          close: false,
+          close: true,
           tag: {isOpen: true , tagTitle: "Download Now", tagColor: "sky" }
         },
          { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
           close: false,
-          tag: {isOpen: true , tagTitle: "Download Now", tagColor: "red" }
+          tag: {isOpen: false , tagTitle: "Download Now", tagColor: "red" }
         }
     ]
     return (
