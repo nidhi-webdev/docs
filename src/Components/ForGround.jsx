@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Card from './Card'
 
 
 function ForGround() {
+  // Giving the constraints so that The drable card should not go out side of the ForGround 
+  const ref = useRef(null);
+
     const data = [
         { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
@@ -21,7 +24,7 @@ function ForGround() {
         }
     ]
     return (
-        <div className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
+        <div ref= {ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
            
            {data.map((item, idx) => 
            <Card key={idx} data = {item}  />
