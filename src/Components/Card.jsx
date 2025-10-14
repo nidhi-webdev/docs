@@ -2,7 +2,7 @@ import React from 'react'
 import { FaRegFileAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { IoMdCloseCircle } from "react-icons/io";
-import { motion } from "motion/react"
+import { motion, scale } from "motion/react"
 
 
 
@@ -24,7 +24,7 @@ const Card = ({ data, reference }) => {
 
     return (
 
-        <motion.div drag dragConstraints={reference} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
+        <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.2}} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
             <FaRegFileAlt />
             <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
             <div className='footer  bottom-0 absolute w-full left-0'>
