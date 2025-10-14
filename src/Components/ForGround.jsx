@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
+
 function ForGround() {
     const data = [
         { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
