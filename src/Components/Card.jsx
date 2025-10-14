@@ -6,8 +6,8 @@ import { motion } from "motion/react"
 
 
 
-const Card = ({ data }) => {
-    console.log("Data from Card", data.desc)
+const Card = ({ data, reference }) => {
+    console.log("reference from Card", reference)
 
     // Color mapping 
     const getTagColor = (color) => {
