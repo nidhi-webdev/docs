@@ -17,12 +17,16 @@ function ForGround() {
           close: false,
           tag: {isOpen: true , tagTitle: "Download Now", tagColor: "green" }
         },
-         { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+         { 
+            id: nanoid(),
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
           close: true,
           tag: {isOpen: true , tagTitle: "Download Now", tagColor: "sky" }
         },
-         { desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+         { 
+            id: nanoid(),
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
           filesize: ".9mb",
           close: false,
           tag: {isOpen: false , tagTitle: "Download Now", tagColor: "red" }
