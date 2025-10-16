@@ -1,6 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Card from './Card'
 import { nanoid } from 'nanoid'
+
 
 
 function ForGround() {
@@ -32,10 +33,10 @@ function ForGround() {
     return (
         <div ref= {ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
            
-           {data.map((item, idx) => 
+           {/* {data.map((item, idx) => 
            <Card key={idx} data = {item} reference = {ref} />
           
-     )}
+     )} */}
         </div>
     )
 }
