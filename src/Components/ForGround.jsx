@@ -34,13 +34,25 @@ function ForGround() {
 
     ])
 
+    // Adding card Functionality 
+    const addCard = () => {
+        const newCard = {
+            id: nanoid(),
+            desc: " New Documents added",
+            filesize: "1.9mb",
+            close: false,
+            tag: { isOpen: true, tagTitle: "New", tagColor: "red" }
+        };
+        setCards([...cards, newCard])
+    };
+
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
 
-            {cards.map((item, idx) => 
-           <Card key={idx} data = {item} reference = {ref} />
-          
-     )}
+            {cards.map((item, idx) =>
+                <Card key={idx} data={item} reference={ref} />
+
+            )}
         </div>
     )
 }
