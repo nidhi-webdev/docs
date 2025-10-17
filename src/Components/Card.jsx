@@ -27,8 +27,8 @@ const Card = ({ data, reference, onDelete }) => {
         <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.2}} dragElastic={0.1}  className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
              <button 
                 onClick={onDelete}
-                className='absolute top-3 right-3 text-red-400 hover:text-red-600 z-10'
-            >
+                className='absolute top-3 right-5 bg-red-500 text-white hover:text-red-600 z-10'
+            >  Delete Card
                 {/* <MdDelete size="1.2em" /> */}
             </button>
 
