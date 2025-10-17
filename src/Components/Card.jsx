@@ -3,6 +3,8 @@ import { FaRegFileAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { IoMdCloseCircle } from "react-icons/io";
 import { motion, scale } from "motion/react"
+import { MdDelete } from "react-icons/md";
+
 
 
 
@@ -27,9 +29,9 @@ const Card = ({ data, reference, onDelete }) => {
         <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.2}} dragElastic={0.1}  className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
              <button 
                 onClick={onDelete}
-                className='absolute top-3 right-5 bg-red-500 text-white hover:text-red-600 z-10'
-            >  Delete Card
-                {/* <MdDelete size="1.2em" /> */}
+                className='absolute top-3 right-5  text-white hover:text-red-600 z-10'
+            >  
+                <MdDelete size="1.2em" />
             </button>
 
             <FaRegFileAlt />
