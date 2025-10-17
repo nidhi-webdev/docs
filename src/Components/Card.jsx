@@ -6,8 +6,8 @@ import { motion, scale } from "motion/react"
 
 
 
-const Card = ({ data, reference }) => {
-    console.log("reference from Card", reference)
+const Card = ({ data, reference, onDelete }) => {
+    
 
     // Color mapping 
     const getTagColor = (color) => {
@@ -25,6 +25,13 @@ const Card = ({ data, reference }) => {
     return (
 
         <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.2}} dragElastic={0.1}  className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
+             <button 
+                onClick={onDelete}
+                className='absolute top-3 right-3 text-red-400 hover:text-red-600 z-10'
+            >
+                {/* <MdDelete size="1.2em" /> */}
+            </button>
+
             <FaRegFileAlt />
             <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
             <div className='footer  bottom-0 absolute w-full left-0'>

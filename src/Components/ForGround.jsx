@@ -46,14 +46,19 @@ function ForGround() {
         setCards([...cards, newCard])
     };
 
+    // Delete card functinality
+    const deleteCard = (id) => {
+     setCards(cards.filter(card => card.id !== id))
+    }
+
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
             {/* Add button */}
             <button onClick={addCard} className='bg-blue-600 text-white px-4 py2 rounded-2xl fixed top-5 right-5  hover:bg-blue-700 z-10'> + Add Cards </button>
-            <button  className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button>
+            {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
             {cards.map((item, idx) =>
-                <Card key={idx} data={item} reference={ref} />
+                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} />
 
             )}
         </div>
