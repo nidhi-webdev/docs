@@ -3,8 +3,6 @@ import Card from './Card'
 import { nanoid } from 'nanoid'
 
 
-
-
 function ForGround() {
     // Giving the constraints so that The drable card should not go out side of the ForGround 
     const ref = useRef(null);
@@ -49,7 +47,7 @@ function ForGround() {
 
     // Delete card functinality
     const deleteCard = (id) => {
-     setCards(cards.filter(card => card.id !== id))
+        setCards(cards.filter(card => card.id !== id))
     }
 
     return (
