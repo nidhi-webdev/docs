@@ -4,18 +4,20 @@ import { LuDownload } from "react-icons/lu";
 import { IoMdCloseCircle } from "react-icons/io";
 import { motion, scale } from "motion/react"
 import { MdDelete } from "react-icons/md";
+import { TiEdit } from "react-icons/ti";
+
 
 
 
 
 const Card = ({ data, reference, onDelete }) => {
-    
+
 
     // Color mapping 
     const getTagColor = (color) => {
         const colorMap = {
             green: 'bg-green-600',
-            sky: 'bg-sky-600', 
+            sky: 'bg-sky-600',
             red: 'bg-red-600',
             blue: 'bg-blue-600',
             yellow: 'bg-yellow-600',
@@ -26,11 +28,16 @@ const Card = ({ data, reference, onDelete }) => {
 
     return (
 
-        <motion.div drag dragConstraints={reference} whileDrag={{scale: 1.2}} dragElastic={0.1}  className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
-             <button 
+        <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
+            {/* Delete Card */}
+            <button
                 onClick={onDelete}
-                className='absolute top-3 right-5  text-white hover:text-red-600 z-10'>  
+                className='absolute top-3 right-5  text-white hover:text-red-600 z-10'>
                 <MdDelete size="1.2em" />
+            </button>
+            {/* Edit Card  */}
+            <button>
+                <TiEdit />
             </button>
 
             <FaRegFileAlt />
@@ -47,7 +54,7 @@ const Card = ({ data, reference, onDelete }) => {
                     <div className={`tag w-full py-4 ${getTagColor(data.tag.tagColor)} flex items-center justify-center`}>
                         <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
                     </div>
-                ) }
+                )}
 
             </div>
         </motion.div>
