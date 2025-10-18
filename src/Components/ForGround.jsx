@@ -50,6 +50,11 @@ function ForGround() {
         setCards(cards.filter(card => card.id !== id))
     }
 
+    // Edit the info of card
+    const editCard = () => {
+
+    }
+
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
             {/* Add button */}
@@ -57,7 +62,7 @@ function ForGround() {
             {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
             {cards.map((item, idx) =>
-                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} />
+                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} onEdit={() => editCard()} />
 
             )}
         </div>
