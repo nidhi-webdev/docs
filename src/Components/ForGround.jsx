@@ -49,11 +49,10 @@ function ForGround() {
     const deleteCard = (id) => {
         setCards(cards.filter(card => card.id !== id))
     }
-
-    // Edit the info of card
-    const editCard = () => {
-
-    }
+// Edit card data
+     const editCard = () => {
+    console.log("From Edit Card")
+   }
 
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>

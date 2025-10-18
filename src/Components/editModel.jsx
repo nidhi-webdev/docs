@@ -1,11 +1,15 @@
 import React from 'react'
+import Card from './Card'
 
 const editModel = () => {
+  
+
   return (
     <div>
-      Works 
+    
     </div>
   )
 }
 
 export default editModel
+
