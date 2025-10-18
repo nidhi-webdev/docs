@@ -29,25 +29,29 @@ const Card = ({ data, reference, onDelete }) => {
     return (
 
         <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
-             {/* Edit Button */}
-            <button 
-                className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
-                <TiEdit size="1.1em" className='text-blue-400' />
-            </button>
-            
-            {/* Delete Button */}
-            <button
-                onClick={onDelete}
-                className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
-                <MdDelete size="1.1em" className='text-red-400' />
-            </button>
+            {/* Edit Button */}
+            <div className='absolute top-2  '>
+                <button
+                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
+                    <TiEdit size="1.1em" className='text-blue-400' />
+                </button>
 
-             {/* File icon - better spacing */}
-        <div className='mt-8'>
-            <FaRegFileAlt size="2em" className='text-gray-400' />
-        </div>
-        
+                {/* Delete Button */}
+                <button
+                    onClick={onDelete}
+                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
+                    <MdDelete size="1.1em" className='text-red-400' />
+                </button>
+            </div>
+
+           
+
+
             <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
+             {/* File icon - better spacing */}
+            <div className='mt-4'>
+                <FaRegFileAlt size="1em" className='text-gray-400' />
+            </div>
             <div className='footer  bottom-0 absolute w-full left-0'>
                 <div className='flex items-center justify-between mb-3 px-8 py-3 '>
                     <h5> {data.filesize} </h5>
