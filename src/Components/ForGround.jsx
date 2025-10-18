@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Card from './Card'
 import { nanoid } from 'nanoid'
+import EditModal from './editModel';
 
 
 function ForGround() {
@@ -53,18 +54,24 @@ function ForGround() {
     const [editingCard, setEditingCard] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-// Edit card data
-     const editCard = (id) => {
-    
-   }
-   // save edited data 
-   const updateCard = (id,updatedData ) => {
+    // Edit card data
+    const editCard = (id) => {
+        //finding the card 
+        const cardToEdit = cards.find(card => card.id == id)
+        // setting is as the editing Card
+        setEditingCard(cardToEdit)
+        // Opening the model
+        setIsModalOpen(true)
 
-   }
+    }
+    // save edited data 
+    const updateCard = (id, updatedData) => {
 
-   const closeModel = () => {
-    
-   }
+    }
+
+    const closeModel = () => {
+
+    }
 
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
@@ -73,9 +80,13 @@ function ForGround() {
             {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
             {cards.map((item, idx) =>
-                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} onEdit={() => editCard()} />
+                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} onEdit={() => editCard(item.id)} />
 
             )}
+
+            <EditModal
+         
+            />
         </div>
     )
 }

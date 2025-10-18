@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-const editModel = () => {
+const EditModal = () => {
   
 
   return (
@@ -11,5 +11,5 @@ const editModel = () => {
   )
 }
 
-export default editModel
+export default EditModal
 
