@@ -30,7 +30,7 @@ const Card = ({ data, reference, onDelete }) => {
 
         <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
             {/* Edit Button */}
-            <div className='absolute top-2  '>
+            <div className='absolute top-3  '>
                 <button
                     className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
                     <TiEdit size="1.1em" className='text-blue-400' />
@@ -44,9 +44,7 @@ const Card = ({ data, reference, onDelete }) => {
                 </button>
             </div>
 
-           
-
-
+           <div className='mt-4'>
             <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
              {/* File icon - better spacing */}
             <div className='mt-4'>
@@ -66,6 +64,7 @@ const Card = ({ data, reference, onDelete }) => {
                     </div>
                 )}
 
+            </div>
             </div>
         </motion.div>
 
