@@ -28,18 +28,18 @@ const Card = ({ data, reference, onDelete }) => {
 
     return (
 
-        <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden'>
+        <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden cursor-pointer'>
             {/* Edit Button */}
             <div className='absolute top-3  '>
-                <button
-                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
+                <button 
+                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110 cursor-pointer'>
                     <TiEdit size="1.1em" className='text-blue-400' />
                 </button>
 
                 {/* Delete Button */}
                 <button
                     onClick={onDelete}
-                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110'>
+                    className='p-2 hover:bg-white/10 rounded-full transition-all hover:scale-110 cursor-pointer '>
                     <MdDelete size="1.1em" className='text-red-400' />
                 </button>
             </div>
