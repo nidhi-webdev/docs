@@ -49,9 +49,21 @@ function ForGround() {
     const deleteCard = (id) => {
         setCards(cards.filter(card => card.id !== id))
     }
+    // Using usesate for edit 
+    const [editingCard, setEditingCard] = useState(null)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
 // Edit card data
-     const editCard = () => {
-    console.log("From Edit Card")
+     const editCard = (id) => {
+    
+   }
+   // save edited data 
+   const updateCard = (id,updatedData ) => {
+
+   }
+
+   const closeModel = () => {
+    
    }
 
     return (
