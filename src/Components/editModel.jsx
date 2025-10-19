@@ -1,5 +1,4 @@
-import React from 'react'
-import Card from './Card'
+
 
 const EditModal = ({ isOpen, cardData, onClose }) => {
     console.log("from Edit Model", cardData)
