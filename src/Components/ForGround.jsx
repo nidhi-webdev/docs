@@ -70,7 +70,7 @@ function ForGround() {
     }
 
     const closeModel = () => {
-
+    
     }
 
     return (
@@ -86,7 +86,7 @@ function ForGround() {
 
             <EditModal
                 isOpen={isModalOpen}
-                cardData={editCard}
+                cardData={cards}
                 onClose={closeModel}
             />
         </div>
