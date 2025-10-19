@@ -85,7 +85,9 @@ function ForGround() {
             )}
 
             <EditModal
-         
+                isOpen={isModalOpen}
+                cardData={editCard}
+                onClose={closeModel}
             />
         </div>
     )
