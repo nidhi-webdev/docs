@@ -70,7 +70,8 @@ function ForGround() {
     }
 
     const closeModel = () => {
-    
+        setEditingCard(null)
+        setIsModalOpen(false)
     }
 
     return (
