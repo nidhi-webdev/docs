@@ -23,7 +23,7 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
 
     return (
         <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
-            <div className='bg-white rounded-lg p-6 w-96'>
++            <div className='bg-white rounded-lg w-full max-w-lg mx-4 px-6 py-6'>
                 <h2 className='text-2xl font-bold mb-4 text-gray-800'> Edit Card </h2>
 
                 <label className="block mb-2"> Description </label>
