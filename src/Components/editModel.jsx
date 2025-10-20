@@ -10,14 +10,14 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
     const [tagColor, setTagColor] = useState('')
 
     useEffect(() => {
-      if(isOpen && cardData) {
-        setDesc(cardData.desc || '')
-        setFilesize(cardData.filesize || '')
-        setTagTitle(cardData.tag.tagTitle || '')
-        setTagColor(cardData.tag.tagColor || '')
-      }
+        if (isOpen && cardData) {
+            setDesc(cardData.desc || '')
+            setFilesize(cardData.filesize || '')
+            setTagTitle(cardData.tag.tagTitle || '')
+            setTagColor(cardData.tag.tagColor || '')
+        }
     }, [isOpen, cardData])
-    
+
 
     if (!isOpen) return null
 
@@ -27,14 +27,22 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
                 <h2 className='text-2xl font-bold mb-4 text-gray-800'> Edit Card </h2>
                 {/* <p className='text-gray-600'> Editing: {cardData?.desc} </p> */}
                 <label> Description </label>
-                <input value={desc} 
-                       onChange={(e) => setDesc(e.target.value)}
+                <input value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
                     className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
 
                 <label> filesize </label>
                 <input value={filesize}
-                 onChange={(e) => setFilesize(e.target.value)}
+                    onChange={(e) => setFilesize(e.target.value)}
                     className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+                <label> Tag Title </label>
+                <input value={tagTitle}
+                    onChange={(e) => setTagTitle(e.target.value)}
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+
+
 
                 <button className=''> Save </button>
                 <button onClick={onClose}
