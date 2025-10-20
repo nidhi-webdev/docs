@@ -41,7 +41,7 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
                     onChange={(e) => setTagTitle(e.target.value)}
                     className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
 
-<label> Tag Color </label>
+                <label> Tag Color </label>
                 <input value={tagColor}
                     onChange={(e) => setTagColor(e.target.value)}
                     className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
