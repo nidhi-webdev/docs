@@ -49,9 +49,9 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
 
 
 
-                <button className=''> Save </button>
+                <button className='bg-green-600 text-white px-4 py-2 rounded-2xl hover:bg-green-700 cursor-pointer float-start'> Save </button>
                 <button onClick={onClose}
-                    className='bg-gray-500 text-white px-4 py-2 rounded-2xl hover:bg-gray-600 mt-4 cursor-pointer'> Cancel </button>
+                    className='bg-gray-500 text-white px-4 py-2 rounded-2xl hover:bg-gray-600 mt-4 cursor-pointer float-end'> Cancel </button>
             </div>
         </div>
     )
