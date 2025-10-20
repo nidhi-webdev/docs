@@ -13,6 +13,8 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
       if(isOpen && cardData) {
         setDesc(cardData.desc || '')
         setFilesize(cardData.filesize || '')
+        setTagTitle(cardData.tag.tagTitle || '')
+        setTagColor(cardData.tag.tagColor || '')
       }
     }, [isOpen, cardData])
     
