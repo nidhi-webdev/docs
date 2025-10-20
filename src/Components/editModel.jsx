@@ -25,26 +25,26 @@ const EditModal = ({ isOpen, cardData, onClose }) => {
         <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
             <div className='bg-white rounded-lg p-6 w-96'>
                 <h2 className='text-2xl font-bold mb-4 text-gray-800'> Edit Card </h2>
-                {/* <p className='text-gray-600'> Editing: {cardData?.desc} </p> */}
-                <label> Description </label>
+
+                <label className="block mb-2"> Description </label>
                 <input value={desc}
                     onChange={(e) => setDesc(e.target.value)}
-                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" />
 
-                <label> filesize </label>
+                <label className="block mb-2"> filesize </label>
                 <input value={filesize}
                     onChange={(e) => setFilesize(e.target.value)}
-                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5"  />
 
-                <label> Tag Title </label>
+                <label className="block mb-2"> Tag Title </label>
                 <input value={tagTitle}
                     onChange={(e) => setTagTitle(e.target.value)}
-                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" />
 
-                <label> Tag Color </label>
+                <label className="block mb-2"> Tag Color </label>
                 <input value={tagColor}
                     onChange={(e) => setTagColor(e.target.value)}
-                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" />
 
 
 
