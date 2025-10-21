@@ -81,6 +81,8 @@ function ForGround() {
                 }
             })
         )
+        setEditingCard(null)
+        setIsModalOpen(false)
       
     }
 
