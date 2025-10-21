@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 
-const EditModal = ({ isOpen, cardData, onClose, onSave}) => {
+const EditModal = ({ isOpen, cardData, onClose, onSave }) => {
     console.log("from Edit Model", cardData)
 
     const [desc, setDesc] = useState('')
@@ -23,7 +23,7 @@ const EditModal = ({ isOpen, cardData, onClose, onSave}) => {
 
     return (
         <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
-+            <div className='bg-white rounded-lg w-full max-w-lg mx-4 px-6 py-6'>
+            +            <div className='bg-white rounded-lg w-full max-w-lg mx-4 px-6 py-6'>
                 <h2 className='text-2xl font-bold mb-4 text-gray-800'> Edit Card </h2>
 
                 <label className="block mb-2"> Description </label>
@@ -34,7 +34,7 @@ const EditModal = ({ isOpen, cardData, onClose, onSave}) => {
                 <label className="block mb-2"> filesize </label>
                 <input value={filesize}
                     onChange={(e) => setFilesize(e.target.value)}
-                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5"  />
+                    className="px-2 py-3 border border-gray-400 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-5" />
 
                 <label className="block mb-2"> Tag Title </label>
                 <input value={tagTitle}
@@ -50,6 +50,8 @@ const EditModal = ({ isOpen, cardData, onClose, onSave}) => {
 
 
                 <button onClick={() => {
+                    // call parent's onSave with id and edited fields
+
                     onSave(cardData.id, {
                         desc,
                         filesize,
@@ -57,7 +59,7 @@ const EditModal = ({ isOpen, cardData, onClose, onSave}) => {
                         tagTitle
                     })
                 }}
-                className='bg-green-600 text-white px-6 py-2 rounded-2xl mt-3 hover:bg-green-700 cursor-pointer float-start'> Save </button>
+                    className='bg-green-600 text-white px-6 py-2 rounded-2xl mt-3 hover:bg-green-700 cursor-pointer float-start'> Save </button>
                 <button onClick={onClose}
                     className='bg-gray-500 text-white px-4 py-2 rounded-2xl hover:bg-gray-600 mt-4 cursor-pointer float-end'> Cancel </button>
             </div>
