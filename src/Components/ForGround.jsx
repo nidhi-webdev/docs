@@ -66,7 +66,12 @@ function ForGround() {
     }
     // save edited data 
     const updateCard = (id, updatedData) => {
-
+        setCards(prev => 
+            prev.map(card => {
+                if(card.id !== id) return card
+            })
+        )
+      
     }
 
     const closeModel = () => {
