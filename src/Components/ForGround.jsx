@@ -104,6 +104,7 @@ function ForGround() {
                 isOpen={isModalOpen}
                 cardData={editingCard}
                 onClose={closeModel}
+                onSave = {updateCard}
             />
         </div>
     )
