@@ -34,6 +34,16 @@ function ForGround() {
         }
     ]
 
+    const [cards, setCards] = useState(() => {
+    try {
+        const raw = localStorage.getItem('cards')
+        return raw ? JSON.parse(raw) : initialCards
+    } catch (e) {
+        console.warn('Failed to parse stored cards, e')
+        return initialCards
+    }
+})
+
 useEffect(() => {
  try {
     localStorage.setItem('cards', JSON.stringify(cards))
@@ -43,15 +53,7 @@ useEffect(() => {
   
 }, [cards])
 
-const [cards, setCards] = useState(() => {
-    try {
-        const raw = localStorage.getItem('cards')
-        return raw ? JSON.parse(raw) : initialCards
-    } catch (e) {
-        console.warn('Failed to parse stored cards, e')
-        return initialCards
-    }
-})
+
 
 
 
