@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Card from './Card'
 import { nanoid } from 'nanoid'
 import EditModal from './editModel';
+import { useEffect } from 'react';
 
 
 function ForGround() {
@@ -32,6 +33,16 @@ function ForGround() {
             tag: { isOpen: false, tagTitle: "Download Now", tagColor: "red" }
         }
     ]
+
+useEffect(() => {
+ try {
+    localStorage.setItem('cards', JSON.stringify(cards))
+ } catch (e) {
+    console.warn('Falied to save cards to localStorage', e)
+ }
+  
+}, [cards])
+
 
 
 
