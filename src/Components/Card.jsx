@@ -44,27 +44,27 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
                 </button>
             </div>
 
-           <div className='mt-4'>
-            <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
-             {/* File icon - better spacing */}
             <div className='mt-4'>
-                <FaRegFileAlt size="1em" className='text-gray-400' />
-            </div>
-            <div className='footer  bottom-0 absolute w-full left-0'>
-                <div className='flex items-center justify-between mb-3 px-8 py-3 '>
-                    <h5> {data.filesize} </h5>
-                    <span className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
-                        {data.close ? <IoMdCloseCircle /> : <LuDownload size=".8em" color='#fff' />}
-                    </span>
+                <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
+                {/* File icon - better spacing */}
+                <div className='mt-4'>
+                    <FaRegFileAlt size="1em" className='text-gray-400' />
+                </div>
+                <div className='footer  bottom-0 absolute w-full left-0'>
+                    <div className='flex items-center justify-between mb-3 px-8 py-3 '>
+                        <h5> {data.filesize} </h5>
+                        <span className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
+                            {data.close ? <IoMdCloseCircle /> : <LuDownload size=".8em" color='#fff' />}
+                        </span>
+
+                    </div>
+                    {data.tag.isOpen && (
+                        <div className={`tag w-full py-4 ${getTagColor(data.tag.tagColor)} flex items-center justify-center`}>
+                            <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
+                        </div>
+                    )}
 
                 </div>
-                {data.tag.isOpen && (
-                    <div className={`tag w-full py-4 ${getTagColor(data.tag.tagColor)} flex items-center justify-center`}>
-                        <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
-                    </div>
-                )}
-
-            </div>
             </div>
         </motion.div>
 

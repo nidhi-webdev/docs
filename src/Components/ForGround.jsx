@@ -66,15 +66,15 @@ function ForGround() {
     }
     // save edited data 
     const updateCard = (id, updatedData) => {
-        setCards(prev => 
+        setCards(prev =>
             prev.map(card => {
-                if(card.id !== id) return card
+                if (card.id !== id) return card
                 return {
                     ...card,
                     desc: updatedData.desc ?? card.desc,
                     filesize: updatedData.filesize ?? card.filesize,
                     tag: {
-                        ...card.tag, 
+                        ...card.tag,
                         tagTitle: updatedData.tagTitle ?? card.tag.tagTitle,
                         tagColor: updatedData.tagColor ?? card.tag.tagColor
                     }
@@ -83,7 +83,7 @@ function ForGround() {
         )
         setEditingCard(null)
         setIsModalOpen(false)
-      
+
     }
 
     const closeModel = () => {
@@ -106,7 +106,7 @@ function ForGround() {
                 isOpen={isModalOpen}
                 cardData={editingCard}
                 onClose={closeModel}
-                onSave = {updateCard}
+                onSave={updateCard}
             />
         </div>
     )

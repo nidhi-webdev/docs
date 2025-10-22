@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 
 const EditModal = ({ isOpen, cardData, onClose, onSave }) => {
-    console.log("from Edit Model", cardData)
+    
 
     const [desc, setDesc] = useState('')
     const [filesize, setFilesize] = useState('')
