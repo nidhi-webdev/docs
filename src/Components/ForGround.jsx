@@ -9,7 +9,7 @@ function ForGround() {
     const ref = useRef(null);
 
     //converting Static data to state
-    const [cards, setCards] = useState([
+    const initialCards = [
         {
             id: nanoid(),
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
@@ -31,8 +31,10 @@ function ForGround() {
             close: false,
             tag: { isOpen: false, tagTitle: "Download Now", tagColor: "red" }
         }
+    ]
 
-    ])
+
+
 
     // Adding card Functionality 
     const addCard = () => {
