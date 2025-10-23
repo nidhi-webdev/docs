@@ -60,7 +60,7 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
                     </div>
                     {data.tag.isOpen && (
                         <div className={`tag w-full py-4 ${getTagColor(data.tag.tagColor)} flex items-center justify-center`}>
-                             <FaCloudDownloadAlt size=".8em" color='#fff' className='mr-2'/>
+                             <FaCloudDownloadAlt size="1.5em" color='#fff' className='mr-2'/>
                             <h3 className='text-sm font-semibold'> {data.tag.tagTitle} </h3>
                         </div>
                     )}
