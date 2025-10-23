@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { FaRegFileAlt } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
 import { motion, scale } from "motion/react"
@@ -10,7 +11,7 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 
 
 
-const Card = ({ data, reference, onDelete, onEdit }) => {
+const Card = ({ data = {}, reference, onDelete, onEdit }) => {
 
 
     // Color mapping 
@@ -25,6 +26,7 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
         }
         return colorMap[color] || 'bg-gray-600'
     }
+    const tag = data.tag || {}
 
     return (
 
@@ -69,7 +71,24 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
             </div>
         </motion.div>
 
-    )
-}
+    )}
+
+    Card.PropTypes = {
+        data: PropTypes.shape({
+            desc: PropTypes.string,
+            filesize: PropTypes.string,
+            close: PropTypes.bool,
+            ag: PropTypes.shape({
+      isOpen: PropTypes.bool,
+      tagColor: PropTypes.string,
+      tagTitle: PropTypes.string
+    })
+
+        }),
+        reference: PropTypes.any,
+        onDelete: PropTypes.func,
+        onEdit: PropTypes.func
+    }
+
 
 export default Card
