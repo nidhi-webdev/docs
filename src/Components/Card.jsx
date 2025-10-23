@@ -5,7 +5,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { motion, scale } from "motion/react"
 import { MdDelete } from "react-icons/md";
 import { TiEdit } from "react-icons/ti";
-
+import { FaCloudUploadAlt } from "react-icons/fa";
 
 
 
@@ -48,7 +48,8 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
                 <p className='text-sm mt-5 font-semibold'> {data.desc} </p>
                 {/* File icon - better spacing */}
                 <div className='mt-4'>
-                    <FaRegFileAlt size="1em" className='text-gray-400' />
+                <FaCloudUploadAlt size="1em" className='text-gray-400' />
+                    
                 </div>
                 <div className='footer  bottom-0 absolute w-full left-0'>
                     <div className='flex items-center justify-between mb-3 px-8 py-3 '>
