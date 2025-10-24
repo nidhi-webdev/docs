@@ -3,24 +3,63 @@ import LoginBackGround from '../Components/LoginBackGround'
 
 const Login = () => {
   return (
-    <div className='relative h-screen w-full'>
+    <div className='relative h-screen w-full overflow-hidden'>
       <LoginBackGround />
-      <div className='absolute inset-0 z-20 flex items-center justify-center  pointer-events-none'>
-        <form className='bg-amber-600 p-6 w-80 rounded-2xl shadow-2xl pointer-events-auto'>
-          <label className='block text-white mb-1'> Username  </label>
-          <input type='text' placeholder='Enter your Username'
-            className='w-65 px-3 py-2 rounded-2xl'
-          />
+      
+      {/* Center container */}
+      <div className='absolute inset-0 z-20 flex items-center justify-center pointer-events-none'>
+        {/* Login card with glassmorphism effect */}
+        <form className='pointer-events-auto bg-white/10 backdrop-blur-lg px-8 py-10 w-96 rounded-3xl shadow-2xl border border-white/20'>
+          {/* Header */}
+          <div className='text-center mb-8'>
+            <h1 className='text-3xl font-bold text-white mb-2'>Welcome Back</h1>
+            <p className='text-white/70 text-sm'>Please login to your account</p>
+          </div>
 
-          <label className='block text-white mb-1'> Password  </label>
-          <input type='text' placeholder='Enter your Password'
-            className='w-65 px-3 py-2 rounded-2xl'
-          />
+          {/* Username field */}
+          <div className='mb-6'>
+            <label className='block text-white text-sm font-medium mb-2'>Username</label>
+            <input 
+              type='text' 
+              placeholder='Enter your username'
+              className='w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all'
+            />
+          </div>
 
+          {/* Password field */}
+          <div className='mb-8'>
+            <label className='block text-white text-sm font-medium mb-2'>Password</label>
+            <input 
+              type='password' 
+              placeholder='Enter your password'
+              className='w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all'
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className='space-y-3'>
+            <button 
+              type='submit' 
+              className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg'
+            >
+              Log In
+            </button>
+            <button 
+              type='button' 
+              className='w-full bg-white/20 backdrop-blur-sm text-white font-semibold py-3 rounded-xl hover:bg-white/30 transition-all duration-200 border border-white/30'
+            >
+              Sign Up
+            </button>
+          </div>
+
+          {/* Footer */}
+          <div className='text-center mt-6'>
+            <a href='#' className='text-white/70 text-sm hover:text-white transition-colors'>
+              Forgot password?
+            </a>
+          </div>
         </form>
       </div>
-
-      <input />
     </div>
   )
 }
