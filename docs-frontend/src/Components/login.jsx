@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div>
         <LoginBackGround />
-     <label> User Name </label>
+     <label>  </label>
      <input />
     </div>
   )
