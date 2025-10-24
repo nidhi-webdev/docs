@@ -6,9 +6,8 @@ const Login = () => {
     <div className='relative h-screen w-full overflow-hidden'>
       <LoginBackGround />
       
-      {/* Center container */}
+    
       <div className='absolute inset-0 z-20 flex items-center justify-center pointer-events-none'>
-        {/* Login card with glassmorphism effect */}
         <form className='pointer-events-auto bg-white/10 backdrop-blur-lg px-8 py-10 w-96 rounded-3xl shadow-2xl border border-white/20'>
           {/* Header */}
           <div className='text-center mb-8'>
