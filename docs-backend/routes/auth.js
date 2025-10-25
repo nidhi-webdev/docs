@@ -19,6 +19,8 @@ router.post('/login', (req, res) => {
         return res.status(401).json({ success: false, message: 'Invalid Credentials'});
     }
 
-    
-})
+    res.json({ success: true, user: {id: user.id, username: user.username}});
+});
+
+module.exports = router;
 
