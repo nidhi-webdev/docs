@@ -2,6 +2,11 @@ import React from 'react'
 import LoginBackGround from '../Components/LoginBackGround'
 
 const Login = () => {
+const [username, setUsername] = useState('')
+const [password, setPassword] = useState('')
+
+
+
   return (
     <div className='relative h-screen w-full overflow-hidden'>
       <LoginBackGround />
