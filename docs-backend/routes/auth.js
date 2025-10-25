@@ -10,7 +10,8 @@ const users = [
 // Post api 
 router.post('/login', (req, res) => {
     const {username, password} = req.body;
-    if(username || password ) {
+
+    if(!username || !password ) {
         return res.status(400).json({success: false, message: 'Username and Password required'});
     }
 
@@ -19,7 +20,7 @@ router.post('/login', (req, res) => {
         return res.status(401).json({ success: false, message: 'Invalid Credentials'});
     }
 
-    res.json({ success: true, user: {id: user.id, username: user.username}});
+    res.json({ success: true, message: 'Login successful!', user: {id: user.id, username: user.username}});
 });
 
 module.exports = router;
