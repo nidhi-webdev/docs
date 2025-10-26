@@ -9,7 +9,7 @@ const [password, setPassword] = useState('')
 const handleLogin = async (e) => {
   e.preventDefault()
   try {
-    const res = await fetch('http://localhost:5001', {
+    const res = await fetch('http://localhost:5001/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password})
@@ -56,7 +56,7 @@ const handleLogin = async (e) => {
 
           {/* Buttons */}
           <div className='space-y-3'>
-            <button 
+            <button onClick={handleLogin}
               type='submit' 
               className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg'
             >
