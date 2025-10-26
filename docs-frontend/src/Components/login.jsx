@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginBackGround from '../Components/LoginBackGround'
+import { useState } from 'react'
 
 const Login = () => {
 const [username, setUsername] = useState('')
@@ -13,6 +14,8 @@ const handleLogin = async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password})
     })
+  } catch(err) {
+     alert('Make sure Backend is running')
   }
 }
 
