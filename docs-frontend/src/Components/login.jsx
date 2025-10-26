@@ -56,7 +56,7 @@ const handleLogin = async (e) => {
 
           {/* Buttons */}
           <div className='space-y-3'>
-            <button onClick={handleLogin}
+            <button onSubmit={handleLogin}
               type='submit' 
               className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg'
             >
