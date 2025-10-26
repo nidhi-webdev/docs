@@ -14,7 +14,14 @@ const handleLogin = async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password})
     })
-  } catch(err) {
+     const data = await res.json()
+     if(res.ok && data.success) {
+      
+     }
+  } 
+ 
+
+  catch(err) {
      alert('Make sure Backend is running')
   }
 }
@@ -50,7 +57,8 @@ const handleLogin = async (e) => {
           <div className='mb-8'>
             <label className='block text-white text-sm font-medium mb-2'>Password</label>
             <input 
-              type='password'
+              type='password' value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder='Enter your password'
               className='w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all'
             />
