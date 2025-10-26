@@ -17,6 +17,8 @@ const handleLogin = async (e) => {
      const data = await res.json()
      if(res.ok && data.success) {
        alert(data.message || 'Login successful!')
+     } else {
+      alert(data.message || 'Login failed')
      }
   } 
  
