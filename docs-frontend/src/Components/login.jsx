@@ -24,6 +24,7 @@ const handleLogin = async (e) => {
  
 
   catch(err) {
+    console.error(err)
      alert('Make sure Backend is running')
   }
 }
