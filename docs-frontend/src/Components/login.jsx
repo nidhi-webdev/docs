@@ -27,7 +27,8 @@ const handleLogin = async (e) => {
       
     
       <div className='absolute inset-0 z-20 flex items-center justify-center pointer-events-none'>
-        <form className='pointer-events-auto bg-white/10 backdrop-blur-lg px-8 py-10 w-96 rounded-3xl shadow-2xl border border-white/20'>
+        <form onSubmit={handleLogin}
+        className='pointer-events-auto bg-white/10 backdrop-blur-lg px-8 py-10 w-96 rounded-3xl shadow-2xl border border-white/20'>
           {/* Header */}
           <div className='text-center mb-8'>
             <h1 className='text-3xl font-bold text-white mb-2'>Welcome Back</h1>
@@ -37,7 +38,8 @@ const handleLogin = async (e) => {
           {/* Username field */}
           <div className='mb-6'>
             <label className='block text-white text-sm font-medium mb-2'>Username</label>
-            <input 
+            <input value={username}
+            onChange={(e) => setUsername(e.target.value)}
               type='text' 
               placeholder='Enter your username'
               className='w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all'
@@ -48,7 +50,7 @@ const handleLogin = async (e) => {
           <div className='mb-8'>
             <label className='block text-white text-sm font-medium mb-2'>Password</label>
             <input 
-              type='password' 
+              type='password'
               placeholder='Enter your password'
               className='w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all'
             />
@@ -56,7 +58,7 @@ const handleLogin = async (e) => {
 
           {/* Buttons */}
           <div className='space-y-3'>
-            <button onSubmit={handleLogin}
+            <button 
               type='submit' 
               className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg'
             >
