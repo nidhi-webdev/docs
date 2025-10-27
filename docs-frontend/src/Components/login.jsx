@@ -17,7 +17,7 @@ const handleLogin = async (e) => {
      const data = await res.json()
      if(res.ok && data.success) {
        alert(data.message || 'Login successful!')
-       onLoginSuccess() // Navigate to main app after successful login
+       onLoginSuccess() // navigating to main app after clicking 
      } else {
       alert(data.message || 'Login failed')
      }
