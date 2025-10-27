@@ -5,7 +5,10 @@ import Login from './Components/login'
 import { useEffect, useState } from 'react'
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState()
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    const saved = localStorage.getItem('isLoggedIn')
+    return saved === 'true'
+  })
 
   useEffect(() => {
     localStorage.setItem('isLoggedIn', isLoggedIn)
