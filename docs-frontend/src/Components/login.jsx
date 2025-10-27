@@ -2,7 +2,7 @@ import React from 'react'
 import LoginBackGround from '../Components/LoginBackGround'
 import { useState } from 'react'
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
 
@@ -17,6 +17,7 @@ const handleLogin = async (e) => {
      const data = await res.json()
      if(res.ok && data.success) {
        alert(data.message || 'Login successful!')
+       onLoginSuccess() // Navigate to main app after successful login
      } else {
       alert(data.message || 'Login failed')
      }
