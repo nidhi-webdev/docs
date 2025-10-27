@@ -7,22 +7,16 @@ import { useState } from 'react'
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+if(!isLoggedIn) {
+  return <Login onLoginSuccess = {() => setIsLoggedIn(true) } />
+}
 
   return (
     <div className='relative full-width h-screen bg-zinc-800'>
-      {!isLoggedIn ? (<Login onLogin={() => setIsLoggedIn(true)} />)
-        : (
           <>
             <BackGround />
             <ForGround />
           </>
-        )
-
-      }
-
-
-
-
     </div>
   )
 }
