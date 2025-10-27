@@ -8,8 +8,8 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState()
 
   useEffect(() => {
-    
-  }, [third])
+    localStorage.setItem('isLoggedIn', isLoggedIn)
+  }, [isLoggedIn])
   
 
 if(!isLoggedIn) {
