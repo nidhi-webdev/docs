@@ -21,8 +21,6 @@ const handleLogin = async (e) => {
       alert(data.message || 'Login failed')
      }
   } 
- 
-
   catch(err) {
     console.error(err)
      alert('Make sure Backend is running')
