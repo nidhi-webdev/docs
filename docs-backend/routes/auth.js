@@ -34,6 +34,14 @@ router.post('/login', (req, res) => {
         { expiresIn: '7d' }
     );
 
+    // Sending Token
+    res.json({
+        success: true,
+        message: 'Login Successfull',
+        token: token,
+        user: { id: user.id, username: user.username, email: user.email } 
+    });
+
 });
 
 module.exports = router;
