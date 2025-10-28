@@ -6,8 +6,10 @@ import { useEffect, useState } from 'react'
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    const saved = localStorage.getItem('isLoggedIn')
-    return saved === 'true'
+
+   const token = localStorage.getItem('authToken')
+   const loginStatus = localStorage.getItem('isLoggedIn')
+   return token && loginStatus === 'true'
   })
 
   useEffect(() => {
