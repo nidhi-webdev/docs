@@ -5,9 +5,13 @@ import { useState } from 'react'
 const Login = ({ onLoginSuccess }) => {
 const [username, setUsername] = useState('')
 const [password, setPassword] = useState('')
+const [loading, setLoading] = useState(false)
 
 const handleLogin = async (e) => {
   e.preventDefault()
+  setLoading(true)
+
+
   try {
     const res = await fetch('http://localhost:5001/api/auth/login', {
       method: 'POST',
