@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+
+// JWT Secret Key 
+const JWT_SECRET = 'docManagementSystem2024SecretKey!@#$%';
 
 // Temporary HardCorded User 
-
 const users = [
-  {id: 1, username: 'admin', password: '123'}
+  {id: 1, username: 'admin', password: '123', email: 'admin@example.com'}
 ];
 
 // Post api 
