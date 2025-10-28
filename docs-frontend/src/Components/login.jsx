@@ -39,6 +39,8 @@ const Login = ({ onLoginSuccess }) => {
     catch (err) {
       console.error(err)
       alert('Make sure Backend is running')
+    } finally {
+      setLoading(false)
     }
   }
 
