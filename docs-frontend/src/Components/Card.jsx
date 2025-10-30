@@ -6,6 +6,7 @@ import { motion } from "motion/react"  // Removed unused 'scale' import
 import { MdDelete } from "react-icons/md";
 import { TiEdit } from "react-icons/ti";
 import { FaCloudUploadAlt, FaCloudDownloadAlt } from "react-icons/fa";
+import { useRef } from 'react';
 
 const Card = ({ data = {}, reference, onDelete, onEdit }) => {
     const getTagColor = (color) => {
