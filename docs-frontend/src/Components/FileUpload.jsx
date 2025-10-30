@@ -9,7 +9,7 @@ const FileUpload = ({ onFileSelected }) => {
    }
 
   return (
-    < input type="file"  multiple onChange={handleChange}/>
+    <input type="file"  multiple onChange={handleChange}/>
   )
 }
 
