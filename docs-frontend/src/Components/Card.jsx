@@ -22,8 +22,13 @@ const Card = ({ data = {}, reference, onDelete, onEdit }) => {
     
     const tag = data.tag || {}
 
+    const fileInputRef = useRef(null)
+
     const handleUploadClick = () => {
-        
+  if( fileInputRef.current ) {
+    fileInputRef.current.click()
+  }
+
     }
 
     return (
