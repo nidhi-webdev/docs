@@ -1,6 +1,6 @@
+import { useState } from "react"
 
-
-const FileUpload = () => {
+const FileUpload = ({ onFileSelected }) => {
     const [files, setFiles] = useState([])
 
    const handleChange = (e) => {
