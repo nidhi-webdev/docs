@@ -20,15 +20,15 @@ const Card = ({ data = {}, reference, onDelete, onEdit }) => {
         }
         return colorMap[color] || 'bg-gray-600'
     }
-    
+
     const tag = data.tag || {}
 
     const fileInputRef = useRef(null)
 
     const handleUploadClick = () => {
-  if( fileInputRef.current ) {
-    fileInputRef.current.click()
-  }
+        if (fileInputRef.current) {
+            fileInputRef.current.click()
+        }
 
     }
 
@@ -53,13 +53,13 @@ const Card = ({ data = {}, reference, onDelete, onEdit }) => {
                     <div className='flex items-center justify-between mb-3 px-8 py-3'>
                         <h5> {data.filesize} </h5>
                         <span onClick={handleUploadClick}
-                        className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
+                            className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
                             {data.close ? <IoMdCloseCircle /> : <FaCloudUploadAlt size=".8em" color='#fff' />}
                         </span>
                     </div>
                     {tag.isOpen && (
                         <div className={`tag w-full py-4 ${getTagColor(tag.tagColor)} flex items-center justify-center`}>
-                            <FaCloudDownloadAlt size="1.5em" color='#fff' className='mr-2'/>
+                            <FaCloudDownloadAlt size="1.5em" color='#fff' className='mr-2' />
                             <h3 className='text-sm font-semibold'> {tag.tagTitle} </h3>
                         </div>
                     )}
