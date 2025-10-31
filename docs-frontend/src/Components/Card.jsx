@@ -8,7 +8,7 @@ import { TiEdit } from "react-icons/ti";
 import { FaCloudUploadAlt, FaCloudDownloadAlt } from "react-icons/fa";
 import { useRef } from 'react';
 
-const Card = ({ data = {}, reference, onDelete, onEdit }) => {
+const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
     const getTagColor = (color) => {
         const colorMap = {
             green: 'bg-green-600',
