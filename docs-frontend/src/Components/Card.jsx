@@ -94,7 +94,8 @@ Card.propTypes = {
     }),
     reference: PropTypes.any,
     onDelete: PropTypes.func,
-    onEdit: PropTypes.func
+    onEdit: PropTypes.func,
+    onFileUpload: PropTypes.func // <-- Added prop type for file upload
 }
 
 export default Card
