@@ -32,6 +32,13 @@ const Card = ({ data = {}, reference, onDelete, onEdit }) => {
 
     }
 
+    const handleFileChange = (e) => {
+     const files = Array.from(e.target.files) 
+     if(onFileUpload) {
+        onFileUpload(files, data)
+     }
+    }
+
     return (
         <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden cursor-pointer'>
             <div className='absolute top-3 flex gap-1'>
@@ -56,6 +63,11 @@ const Card = ({ data = {}, reference, onDelete, onEdit }) => {
                             className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
                             {data.close ? <IoMdCloseCircle /> : <FaCloudUploadAlt size=".8em" color='#fff' />}
                         </span>
+                        <input 
+                           type='file' multiple ref={fileInputRef}
+                           style={{ display: 'none'}}
+                           onChange={handleFileChange}
+                        />
                     </div>
                     {tag.isOpen && (
                         <div className={`tag w-full py-4 ${getTagColor(tag.tagColor)} flex items-center justify-center`}>
