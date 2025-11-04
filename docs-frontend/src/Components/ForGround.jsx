@@ -118,15 +118,9 @@ useEffect(() => {
 
     // Handling file upload
     const handleFileUpload = (files, cardData) => {
-        console.log('Files uploaded:', files)
-        console.log('Card data:', cardData)
         
-        // Getting file information
-        files.forEach(file => {
-            console.log('File name:', file.name)
-            console.log('File size:', file.size)
-            console.log('File type:', file.type)
-        })
+        
+        
         
         // Updating card with file information (optional)
         if (files.length > 0) {
