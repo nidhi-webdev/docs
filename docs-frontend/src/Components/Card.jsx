@@ -71,7 +71,7 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
                         />
                     </div>
                     {tag.isOpen && (
-                        <div className={`tag w-full py-4 ${getTagColor(tag.tagColor)} flex items-center justify-center`}>
+                        <div className={`tag w-full py-4 ${getTagColor(tag.tagColor)} flex items-center justify-center`} onClick={downloadFile}>
                             <FaCloudDownloadAlt size="1.5em" color='#fff' className='mr-2' />
                             <h3 className='text-sm font-semibold'> {tag.tagTitle} </h3>
                         </div>
