@@ -63,6 +63,7 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
                             className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
                             {data.close ? <IoMdCloseCircle /> : <FaCloudUploadAlt size=".8em" color='#fff' />}
                         </span>
+                        {/* user is selecting file from here  */}
                         <input 
                            type='file' multiple ref={fileInputRef}
                            style={{ display: 'none'}}
@@ -95,7 +96,7 @@ Card.propTypes = {
     reference: PropTypes.any,
     onDelete: PropTypes.func,
     onEdit: PropTypes.func,
-    onFileUpload: PropTypes.func // <-- Added prop type for file upload
+    onFileUpload: PropTypes.func 
 }
 
 export default Card

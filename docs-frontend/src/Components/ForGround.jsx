@@ -116,6 +116,33 @@ useEffect(() => {
         setIsModalOpen(false)
     }
 
+    // Handling file upload
+    const handleFileUpload = (files, cardData) => {
+        console.log('Files uploaded:', files)
+        console.log('Card data:', cardData)
+        
+        // Getting file information
+        files.forEach(file => {
+            console.log('File name:', file.name)
+            console.log('File size:', file.size)
+            console.log('File type:', file.type)
+        })
+        
+        // Updating card with file information (optional)
+        if (files.length > 0) {
+            const totalSize = files.reduce((acc, file) => acc + file.size, 0)
+            const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2)
+            
+            // Updating the card with new file info
+            updateCard(cardData.id, {
+                filesize: `${sizeInMB}mb`,
+                desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`
+            })
+            
+            alert(`Successfully uploaded ${files.length} file(s)!`)
+        }
+    }
+
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
             {/* Add button */}
@@ -123,7 +150,13 @@ useEffect(() => {
             {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
             {cards.map((item, idx) =>
-                <Card key={item.id} data={item} reference={ref} onDelete={() => deleteCard(item.id)} onEdit={() => editCard(item.id)} />
+                <Card key={item.id} 
+                data={item} 
+                reference={ref} 
+                onDelete={() => deleteCard(item.id)} 
+                onEdit={() => editCard(item.id)} 
+                onFileUpload={handleFileUpload}
+                />
 
             )}
 
