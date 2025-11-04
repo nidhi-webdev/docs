@@ -136,7 +136,9 @@ useEffect(() => {
             // Updating the card with new file info
             updateCard(cardData.id, {
                 filesize: `${sizeInMB}mb`,
-                desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`
+                desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
+                tagTitle: 'Download Now',
+                
             })
             
             alert(`Successfully uploaded ${files.length} file(s)!`)
