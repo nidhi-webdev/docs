@@ -66,7 +66,7 @@ useEffect(() => {
             desc: " New Documents added",
             filesize: "1.9mb",
             close: false,
-            tag: { isOpen: true, tagTitle: "New", tagColor: "red" }
+            tag: { isOpen: true, tagTitle: "DownLoad Now", tagColor: "red" }
         };
         setCards([...cards, newCard])
     };
