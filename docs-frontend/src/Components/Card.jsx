@@ -39,6 +39,12 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
      }
     }
 
+    // Downloading Feature 
+    const downloadFile = (e) => {
+        console.log("From Download File")
+
+    }
+
     return (
         <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} className='w-60 h-72 bg-zinc-900 rounded-[45px] px-8 py-10 relative text-white overflow-hidden cursor-pointer'>
             <div className='absolute top-3 flex gap-1'>
