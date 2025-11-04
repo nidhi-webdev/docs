@@ -37,23 +37,23 @@ function ForGround() {
     ]
 
     const [cards, setCards] = useState(() => {
-    try {
-        const raw = localStorage.getItem('cards')
-        return raw ? JSON.parse(raw) : initialCards
-    } catch (e) {
-        console.warn('Failed to parse stored cards, e')
-        return initialCards
-    }
-})
+        try {
+            const raw = localStorage.getItem('cards')
+            return raw ? JSON.parse(raw) : initialCards
+        } catch (e) {
+            console.warn('Failed to parse stored cards, e')
+            return initialCards
+        }
+    })
 
-useEffect(() => {
- try {
-    localStorage.setItem('cards', JSON.stringify(cards))
- } catch (e) {
-    console.warn('Falied to save cards to localStorage', e)
- }
-  
-}, [cards])
+    useEffect(() => {
+        try {
+            localStorage.setItem('cards', JSON.stringify(cards))
+        } catch (e) {
+            console.warn('Falied to save cards to localStorage', e)
+        }
+
+    }, [cards])
 
 
 
@@ -118,15 +118,16 @@ useEffect(() => {
 
     // Handling file upload
     const handleFileUpload = (files, cardData) => {
-        
-        
-        
-        
-        // Updating card with file information (optional)
+
         if (files.length > 0) {
             const totalSize = files.reduce((acc, file) => acc + file.size, 0)
             const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2)
-            
+
+            // raw binary data of a file (like a PDF, image, or text file) and encoding it as a long string using the Base64 encoding scheme.
+            const filePromises = files.map(file => {
+    
+            })
+
             // Updating the card with new file info
             updateCard(cardData.id, {
                 filesize: `${sizeInMB}mb`,
@@ -134,7 +135,7 @@ useEffect(() => {
                 tagTitle: 'Download Now',
                 tagColor: cardData.tag?.tagColor || 'green'
             })
-            
+
             alert(`Successfully uploaded ${files.length} file(s)!`)
         }
     }
@@ -146,12 +147,12 @@ useEffect(() => {
             {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
             {cards.map((item, idx) =>
-                <Card key={item.id} 
-                data={item} 
-                reference={ref} 
-                onDelete={() => deleteCard(item.id)} 
-                onEdit={() => editCard(item.id)} 
-                onFileUpload={handleFileUpload}
+                <Card key={item.id}
+                    data={item}
+                    reference={ref}
+                    onDelete={() => deleteCard(item.id)}
+                    onEdit={() => editCard(item.id)}
+                    onFileUpload={handleFileUpload}
                 />
 
             )}
