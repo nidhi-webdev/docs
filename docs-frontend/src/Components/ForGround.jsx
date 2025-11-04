@@ -125,7 +125,9 @@ function ForGround() {
 
             // raw binary data of a file (like a PDF, image, or text file) and encoding it as a long string using the Base64 encoding scheme.
             const filePromises = files.map(file => {
-    
+                return new Promise((resolve) => {
+
+                })
             })
 
             // Updating the card with new file info
