@@ -42,8 +42,9 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload, onDownload
     // Downloading Feature 
     const downloadFile = (e) => {
         e.stopPropagation()
-       
-
+       if( onDownload ) {
+        onDownload(data)
+       }
     }
 
     return (
