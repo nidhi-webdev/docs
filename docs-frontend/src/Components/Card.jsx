@@ -8,7 +8,7 @@ import { TiEdit } from "react-icons/ti";
 import { FaCloudUploadAlt, FaCloudDownloadAlt } from "react-icons/fa";
 import { useRef } from 'react';
 
-const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
+const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload, onDownload }) => {
     const getTagColor = (color) => {
         const colorMap = {
             green: 'bg-green-600',
@@ -41,7 +41,8 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload }) => {
 
     // Downloading Feature 
     const downloadFile = (e) => {
-        console.log("From Download File")
+        e.stopPropagation()
+       
 
     }
 
