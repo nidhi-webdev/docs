@@ -186,6 +186,7 @@ function ForGround() {
                     onDelete={() => deleteCard(item.id)}
                     onEdit={() => editCard(item.id)}
                     onFileUpload={handleFileUpload}
+                    onDownload = {() => handleDownload(item)}
                 />
 
             )}
