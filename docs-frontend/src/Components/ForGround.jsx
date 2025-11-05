@@ -128,8 +128,14 @@ function ForGround() {
                 return new Promise((resolve) => {
                  const reader = new FileReader()
                  reader.onload = (e) => {
-                    
+                    resolve({
+                        name: file.name,
+                        type: file.type,
+                        size: file.size,
+                        data: e.target.result
+                    })
                  }
+                 reader.readAsDataURL(file)
                 })
             })
 
