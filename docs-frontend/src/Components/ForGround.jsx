@@ -140,7 +140,8 @@ function ForGround() {
             })
 
             // Updating the card with new file info
-            updateCard(cardData.id, {
+            Promise.all(filePromises).then(filesData => {
+                updateCard(cardData.id, {
                 filesize: `${sizeInMB}mb`,
                 desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
                 tagTitle: 'Download Now',
@@ -148,6 +149,9 @@ function ForGround() {
             })
 
             alert(`Successfully uploaded ${files.length} file(s)!`)
+
+            })
+            
         }
     }
 
