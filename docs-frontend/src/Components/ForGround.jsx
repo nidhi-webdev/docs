@@ -98,6 +98,8 @@ function ForGround() {
                     ...card,
                     desc: updatedData.desc ?? card.desc,
                     filesize: updatedData.filesize ?? card.filesize,
+                    uploadedFiles: updatedData.uploadedFiles ?? card.uploadedFiles, // <-- add this
+
                     tag: {
                         ...card.tag,
                         tagTitle: updatedData.tagTitle ?? card.tag.tagTitle,
@@ -126,32 +128,32 @@ function ForGround() {
             // raw binary data of a file (like a PDF, image, or text file) and encoding it as a long string using the Base64 encoding scheme.
             const filePromises = files.map(file => {
                 return new Promise((resolve) => {
-                 const reader = new FileReader()
-                 reader.onload = (e) => {
-                    resolve({
-                        name: file.name,
-                        type: file.type,
-                        size: file.size,
-                        data: e.target.result
-                    })
-                 }
-                 reader.readAsDataURL(file)
+                    const reader = new FileReader()
+                    reader.onload = (e) => {
+                        resolve({
+                            name: file.name,
+                            type: file.type,
+                            size: file.size,
+                            data: e.target.result
+                        })
+                    }
+                    reader.readAsDataURL(file)
                 })
             })
 
             // Updating the card with new file info
             Promise.all(filePromises).then(filesData => {
                 updateCard(cardData.id, {
-                filesize: `${sizeInMB}mb`,
-                desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
-                tagTitle: 'Download Now',
-                tagColor: cardData.tag?.tagColor || 'green'
+                    filesize: `${sizeInMB}mb`,
+                    desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
+                    tagTitle: 'Download Now',
+                    tagColor: cardData.tag?.tagColor || 'green'
+                })
+
+                alert(`Successfully uploaded ${files.length} file(s)!`)
+
             })
 
-            alert(`Successfully uploaded ${files.length} file(s)!`)
-
-            })
-            
         }
     }
 
