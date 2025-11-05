@@ -157,7 +157,19 @@ function ForGround() {
         }
     }
 
-    const handleDownload = () => {
+    const handleDownload = (cardData) => {
+        if(!cardData.uploadedFiles || cardData.uploadedFiles.length === 0) {
+            alert('No files to download')
+            return
+        }
+        cardData.uploadedFiles.forEach(file => {
+            const link = document.createElement('a')
+            link.href = file.data
+            link.download = file.name
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+        })
         
     }
 
