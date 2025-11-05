@@ -33,18 +33,18 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload, onDownload
     }
 
     const handleFileChange = (e) => {
-     const files = Array.from(e.target.files) 
-     if(onFileUpload) {
-        onFileUpload(files, data)
-     }
+        const files = Array.from(e.target.files)
+        if (onFileUpload) {
+            onFileUpload(files, data)
+        }
     }
 
     // Downloading Feature 
     const downloadFile = (e) => {
         e.stopPropagation()
-       if( onDownload ) {
-        onDownload(data)
-       }
+        if (onDownload) {
+            onDownload(data)
+        }
     }
 
     return (
@@ -72,10 +72,10 @@ const Card = ({ data = {}, reference, onDelete, onEdit, onFileUpload, onDownload
                             {data.close ? <IoMdCloseCircle /> : <FaCloudUploadAlt size=".8em" color='#fff' />}
                         </span>
                         {/* user is selecting file from here  */}
-                        <input 
-                           type='file' multiple ref={fileInputRef}
-                           style={{ display: 'none'}}
-                           onChange={handleFileChange}
+                        <input
+                            type='file' multiple ref={fileInputRef}
+                            style={{ display: 'none' }}
+                            onChange={handleFileChange}
                         />
                     </div>
                     {tag.isOpen && (
@@ -104,7 +104,7 @@ Card.propTypes = {
     reference: PropTypes.any,
     onDelete: PropTypes.func,
     onEdit: PropTypes.func,
-    onFileUpload: PropTypes.func 
+    onFileUpload: PropTypes.func
 }
 
 export default Card
