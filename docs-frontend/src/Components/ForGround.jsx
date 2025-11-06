@@ -147,14 +147,13 @@ function ForGround() {
 
             // Updating the card with new file info
             Promise.all(filePromises).then(filesData => {
-                console.log('Files converted to base64:', filesData) // 👈 Debug
                 
                 updateCard(cardData.id, {
                     filesize: `${sizeInMB}mb`,
                     desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
                     tagTitle: 'Download Now',
                     tagColor: cardData.tag?.tagColor || 'green',
-                    uploadedFiles: filesData // 👈 This should save the files
+                    uploadedFiles: filesData
                 })
 
                 alert(`Successfully uploaded ${files.length} file(s)!`)
@@ -165,9 +164,6 @@ function ForGround() {
     }
 
     const handleDownload = (cardData) => {
-        console.log('Download clicked!') // Debug
-        console.log('Card data:', cardData) // Debug
-        console.log('Uploaded files:', cardData.uploadedFiles) // Debug
         
         if(!cardData.uploadedFiles || cardData.uploadedFiles.length === 0) {
             alert('No files to download!')
@@ -175,7 +171,7 @@ function ForGround() {
         }
         
         cardData.uploadedFiles.forEach(file => {
-            console.log('Downloading:', file.name) // Debug
+            console.log('Downloading:', file.name)
             const link = document.createElement('a')
             link.href = file.data
             link.download = file.name

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FaRegFileAlt } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
-import { motion } from "motion/react"  // Removed unused 'scale' import
+import { motion } from "motion/react"
 import { MdDelete } from "react-icons/md";
 import { TiEdit } from "react-icons/ti";
 import { FaCloudUploadAlt, FaCloudDownloadAlt } from "react-icons/fa";
@@ -95,7 +95,7 @@ Card.propTypes = {
         desc: PropTypes.string,
         filesize: PropTypes.string,
         close: PropTypes.bool,
-        uploadedFiles: PropTypes.array, // 👈 Add this
+        uploadedFiles: PropTypes.array,
         tag: PropTypes.shape({
             isOpen: PropTypes.bool,
             tagColor: PropTypes.string,
@@ -106,7 +106,7 @@ Card.propTypes = {
     onDelete: PropTypes.func,
     onEdit: PropTypes.func,
     onFileUpload: PropTypes.func,
-    onDownload: PropTypes.func // 👈 Add this
+    onDownload: PropTypes.func
 }
 
 export default Card
