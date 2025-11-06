@@ -147,7 +147,8 @@ function ForGround() {
                     filesize: `${sizeInMB}mb`,
                     desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
                     tagTitle: 'Download Now',
-                    tagColor: cardData.tag?.tagColor || 'green'
+                    tagColor: cardData.tag?.tagColor || 'green',
+                    uploadedFiles: filesData 
                 })
 
                 alert(`Successfully uploaded ${files.length} file(s)!`)
