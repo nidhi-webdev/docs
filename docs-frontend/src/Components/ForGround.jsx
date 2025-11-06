@@ -171,7 +171,6 @@ function ForGround() {
         }
         
         cardData.uploadedFiles.forEach(file => {
-            console.log('Downloading:', file.name)
             const link = document.createElement('a')
             link.href = file.data
             link.download = file.name
