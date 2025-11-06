@@ -95,6 +95,7 @@ Card.propTypes = {
         desc: PropTypes.string,
         filesize: PropTypes.string,
         close: PropTypes.bool,
+        uploadedFiles: PropTypes.array, // 👈 Add this
         tag: PropTypes.shape({
             isOpen: PropTypes.bool,
             tagColor: PropTypes.string,
@@ -104,7 +105,8 @@ Card.propTypes = {
     reference: PropTypes.any,
     onDelete: PropTypes.func,
     onEdit: PropTypes.func,
-    onFileUpload: PropTypes.func
+    onFileUpload: PropTypes.func,
+    onDownload: PropTypes.func // 👈 Add this
 }
 
 export default Card

@@ -159,11 +159,17 @@ function ForGround() {
     }
 
     const handleDownload = (cardData) => {
+        console.log('Download clicked!') // Debug
+        console.log('Card data:', cardData) // Debug
+        console.log('Uploaded files:', cardData.uploadedFiles) // Debug
+        
         if(!cardData.uploadedFiles || cardData.uploadedFiles.length === 0) {
-            alert('No files to download')
+            alert('No files to download!')
             return
         }
+        
         cardData.uploadedFiles.forEach(file => {
+            console.log('Downloading:', file.name) // Debug
             const link = document.createElement('a')
             link.href = file.data
             link.download = file.name
@@ -172,6 +178,7 @@ function ForGround() {
             document.body.removeChild(link)
         })
         
+        alert(`Downloaded ${cardData.uploadedFiles.length} file(s)!`)
     }
 
     return (
