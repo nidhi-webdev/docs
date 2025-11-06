@@ -91,14 +91,16 @@ function ForGround() {
     }
     // save edited data 
     const updateCard = (id, updatedData) => {
+        console.log('updateCard called with:', id, updatedData) 
+        
         setCards(prev =>
             prev.map(card => {
                 if (card.id !== id) return card
-                return {
+                const updated = {
                     ...card,
                     desc: updatedData.desc ?? card.desc,
                     filesize: updatedData.filesize ?? card.filesize,
-                    uploadedFiles: updatedData.uploadedFiles ?? card.uploadedFiles, // <-- add this
+                    uploadedFiles: updatedData.uploadedFiles ?? card.uploadedFiles,
 
                     tag: {
                         ...card.tag,
@@ -106,6 +108,8 @@ function ForGround() {
                         tagColor: updatedData.tagColor ?? card.tag.tagColor
                     }
                 }
+                console.log('Updated card:', updated) 
+                return updated
             })
         )
         setEditingCard(null)
@@ -143,12 +147,14 @@ function ForGround() {
 
             // Updating the card with new file info
             Promise.all(filePromises).then(filesData => {
+                console.log('Files converted to base64:', filesData) // 👈 Debug
+                
                 updateCard(cardData.id, {
                     filesize: `${sizeInMB}mb`,
                     desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
                     tagTitle: 'Download Now',
                     tagColor: cardData.tag?.tagColor || 'green',
-                    uploadedFiles: filesData 
+                    uploadedFiles: filesData // 👈 This should save the files
                 })
 
                 alert(`Successfully uploaded ${files.length} file(s)!`)
