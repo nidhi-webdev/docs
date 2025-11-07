@@ -25,7 +25,7 @@ if(!isLoggedIn) {
     <div className='relative full-width h-screen bg-zinc-800'>
           <>
             <BackGround />
-            <ForGround />
+            <ForGround username = {username} />
           </>
     </div>
   )
