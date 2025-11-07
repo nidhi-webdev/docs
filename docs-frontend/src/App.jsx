@@ -25,6 +25,7 @@ if(!isLoggedIn) {
     if(token) localStorage.setItem('authToken', token)
       if(loggedInUsername) {
         localStorage.setItem('usename', loggedInUsername)
+        setUsername(loggedInUsername)
       }
       setIsLoggedIn(true) }
   }
