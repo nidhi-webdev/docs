@@ -5,6 +5,8 @@ import Login from './Components/login'
 import { useEffect, useState } from 'react'
 
 const App = () => {
+  const [username, setUsername] = useState(() => localStorage.getItem('username' || '' ))
+
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
 
    const token = localStorage.getItem('authToken')
