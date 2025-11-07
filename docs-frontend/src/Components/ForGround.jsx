@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 
-function ForGround({username = ' '}) {
+function ForGround({ username = ' ' }) {
     // Giving the constraints so that The drable card should not go out side of the ForGround 
     const ref = useRef(null);
 
@@ -91,8 +91,8 @@ function ForGround({username = ' '}) {
     }
     // save edited data 
     const updateCard = (id, updatedData) => {
-        console.log('updateCard called with:', id, updatedData) 
-        
+        console.log('updateCard called with:', id, updatedData)
+
         setCards(prev =>
             prev.map(card => {
                 if (card.id !== id) return card
@@ -108,7 +108,7 @@ function ForGround({username = ' '}) {
                         tagColor: updatedData.tagColor ?? card.tag.tagColor
                     }
                 }
-                console.log('Updated card:', updated) 
+                console.log('Updated card:', updated)
                 return updated
             })
         )
@@ -147,7 +147,7 @@ function ForGround({username = ' '}) {
 
             // Updating the card with new file info
             Promise.all(filePromises).then(filesData => {
-                
+
                 updateCard(cardData.id, {
                     filesize: `${sizeInMB}mb`,
                     desc: `${files.length} file(s) uploaded: ${files[0].name}${files.length > 1 ? ' and more' : ''}`,
@@ -164,12 +164,12 @@ function ForGround({username = ' '}) {
     }
 
     const handleDownload = (cardData) => {
-        
-        if(!cardData.uploadedFiles || cardData.uploadedFiles.length === 0) {
+
+        if (!cardData.uploadedFiles || cardData.uploadedFiles.length === 0) {
             alert('No files to download!')
             return
         }
-        
+
         cardData.uploadedFiles.forEach(file => {
             const link = document.createElement('a')
             link.href = file.data
@@ -178,7 +178,7 @@ function ForGround({username = ' '}) {
             link.click()
             document.body.removeChild(link)
         })
-        
+
         alert(`Downloaded ${cardData.uploadedFiles.length} file(s)!`)
     }
 
@@ -186,8 +186,8 @@ function ForGround({username = ' '}) {
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
             {/* Add button */}
             <button onClick={addCard} className='bg-blue-600 text-white px-4 py2 rounded-2xl fixed top-5 right-5  hover:bg-blue-700 z-10'> + Add Cards </button>
-            {/* <button onClick={deleteCard} className='bg-red-600 text-white  px-4 py2 rounded-2xl fixed  top-5 right-40 hover:bg-red-700 z-10'> - Delete card </button> */}
 
+            <strong> {username} </strong>
             {cards.map((item, idx) =>
                 <Card key={item.id}
                     data={item}
@@ -195,7 +195,7 @@ function ForGround({username = ' '}) {
                     onDelete={() => deleteCard(item.id)}
                     onEdit={() => editCard(item.id)}
                     onFileUpload={handleFileUpload}
-                    onDownload = {() => handleDownload(item)}
+                    onDownload={() => handleDownload(item)}
                 />
 
             )}
