@@ -187,7 +187,7 @@ function ForGround({ username = ' ' }) {
             {/* Add button */}
             <button onClick={addCard} className='bg-blue-600 text-white px-4 py2 rounded-2xl fixed top-5 right-5  hover:bg-blue-700 z-10'> + Add Cards </button>
 
-            <strong> {username} </strong>
+            <strong> {username || 'Guest'} </strong>
             {cards.map((item, idx) =>
                 <Card key={item.id}
                     data={item}
