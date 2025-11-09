@@ -27,11 +27,14 @@ const Login = ({ onLoginSuccess }) => {
         // storing user Info
         localStorage.setItem('user', JSON.stringify(data.user))
 
+        // stroing username key too 
+        localStorage.setItem('username', data.user.username || data.user.name || '')
+
         // storing Login status
         localStorage.setItem('isLoggedIn', 'true')
 
         alert(data.message || 'Login successful!')
-        onLoginSuccess() // navigating to main app after clicking 
+        onLoginSuccess?.(data.user.username || data.user.name || '', data.token) // navigating to main app after clicking 
       } else {
         alert(data.message || 'Login failed')
       }
