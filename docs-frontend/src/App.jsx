@@ -11,7 +11,6 @@ const App = () => {
 
    const token = localStorage.getItem('authToken')
    const loginStatus = localStorage.getItem('isLoggedIn')
-   console.log("Form loginstatus", loginStatus)
    return token && loginStatus === 'true'
   })
 
