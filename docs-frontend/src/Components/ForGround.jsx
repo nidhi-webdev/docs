@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 
 
 function ForGround({ username = ' ' }) {
+    console.log("Username from Forground", username)
     // Giving the constraints so that The drable card should not go out side of the ForGround 
     const ref = useRef(null);
 

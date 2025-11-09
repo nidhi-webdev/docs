@@ -24,7 +24,7 @@ if(!isLoggedIn) {
   return <Login onLoginSuccess = {(loggedInUsername, token) =>  {
     if(token) localStorage.setItem('authToken', token)
       if(loggedInUsername) {
-        localStorage.setItem('usename', loggedInUsername)
+        localStorage.setItem('username', loggedInUsername)
         setUsername(loggedInUsername)
       }
       setIsLoggedIn(true) }
