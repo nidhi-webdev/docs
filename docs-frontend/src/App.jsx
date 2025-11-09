@@ -23,12 +23,14 @@ const App = () => {
 
   if (!isLoggedIn) {
     return (
-      <login
+      <Login
         onLoginSuccess={(loggedInUsername, token) => {
           if (token) localStorage.setItem('authToken', token)
           if (loggedInUsername) {
-
+            localStorage.setItem('username', loggedInUsername)
+            setIsLoggedIn(loggedInUsername)
           }
+          setIsLoggedIn(true)
         }}
       />
     )
