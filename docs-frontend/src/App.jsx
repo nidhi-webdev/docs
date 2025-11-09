@@ -28,7 +28,7 @@ const App = () => {
           if (token) localStorage.setItem('authToken', token)
           if (loggedInUsername) {
             localStorage.setItem('username', loggedInUsername)
-            setIsLoggedIn(loggedInUsername)
+            setUsername(loggedInUsername)
           }
           setIsLoggedIn(true)
         }}
