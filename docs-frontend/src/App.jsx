@@ -11,26 +11,35 @@ const App = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
 
-   const token = localStorage.getItem('authToken')
-   const loginStatus = localStorage.getItem('isLoggedIn')
-   return !!token && loginStatus === 'true'
+    const token = localStorage.getItem('authToken')
+    const loginStatus = localStorage.getItem('isLoggedIn')
+    return !!token && loginStatus === 'true'
   })
 
   useEffect(() => {
     localStorage.setItem('isLoggedIn', isLoggedIn)
   }, [isLoggedIn])
-  
 
-if(!isLoggedIn) {
- 
-}
+
+  if (!isLoggedIn) {
+    return (
+      <login
+        onLoginSuccess={(loggedInUsername, token) => {
+          if (token) localStorage.setItem('authToken', token)
+          if (loggedInUsername) {
+
+          }
+        }}
+      />
+    )
+  }
 
   return (
     <div className='relative full-width h-screen bg-zinc-800'>
-          <>
-            <BackGround />
-            <ForGround username = {username} />
-          </>
+      <>
+        <BackGround />
+        <ForGround username={username} />
+      </>
     </div>
   )
 }
