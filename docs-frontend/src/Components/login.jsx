@@ -1,4 +1,3 @@
-import React from 'react'
 import LoginBackGround from '../Components/LoginBackGround'
 import { useState } from 'react'
 
