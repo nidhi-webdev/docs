@@ -4,7 +4,6 @@ import { useState } from 'react'
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
 
   const handleLogin = async (e) => {
     e.preventDefault()
