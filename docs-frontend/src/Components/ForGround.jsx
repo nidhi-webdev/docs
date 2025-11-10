@@ -185,7 +185,7 @@ function ForGround({ username = ' ' }) {
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
             {/* Add button */}
-            <span>
+            <span className='fixed top-5 right-10 text-white'>
                 <strong> {username || 'Guest'} </strong>
             </span>
             
