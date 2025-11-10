@@ -4,6 +4,7 @@ import { useState } from 'react'
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -87,9 +88,10 @@ const Login = ({ onLoginSuccess }) => {
           <div className='space-y-3'>
             <button
               type='submit'
-              className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg'
+              disabled={loading}
+              className='w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed'
             >
-              Log In
+              {loading ? 'Logging in...' : 'Log In'}
             </button>
             <button
               type='button'
