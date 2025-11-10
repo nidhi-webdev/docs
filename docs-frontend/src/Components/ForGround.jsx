@@ -184,12 +184,12 @@ function ForGround({ username = ' ' }) {
 
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
-            {/* Username badge (restore to right-20 and first) */}
-            <div className='fixed top-5 right-20 z-20'>
+           
+            <div className='fixed top-5 right-5 z-20'>
                 <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm border border-white/10">
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
-                        {(username || 'G')[0]?.toUpperCase()}
-                    </div>
+                        {(username || 'G')[0]?.toUpperCase()
+                        }</div>
                     <div className="flex flex-col leading-tight">
                         <span className="text-xs opacity-80">Signed in as</span>
                         <span className="text-sm font-semibold">{username || 'Guest'}</span>
@@ -197,9 +197,9 @@ function ForGround({ username = ' ' }) {
                 </div>
             </div>
 
-            {/* Add button (after the badge) */}
-            <button onClick={addCard} className='bg-blue-600 text-white px-4 py-2 rounded-2xl fixed top-5 right-5 hover:bg-blue-700 z-30 shadow-lg'> + Add Cards </button>
-
+            {/* Add button - next to username badge */}
+            <button onClick={addCard} className='bg-blue-600 text-white px-4 py-2 rounded-2xl fixed top-5 right-45 hover:bg-blue-700 z-30 shadow-lg'> + Add Cards </button>
+            
             {cards.map((item, idx) =>
                 <Card key={item.id}
                     data={item}
