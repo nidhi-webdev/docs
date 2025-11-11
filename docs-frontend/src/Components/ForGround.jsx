@@ -199,21 +199,23 @@ function ForGround({ username = ' ' }) {
                             <span className="text-sm font-semibold">{username || 'Guest'}</span>
                         </div>
 
-                         <svg className={`w-4 h-4 ml-2 transition-transform ${menuOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className={`w-4 h-4 ml-2 transition-transform ${menuOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
 
+                        {/* Creating Dropdown menu */}
+                        {menuOpen && (
+                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
+                                <button className="w-full text-left px-4 py-2 hover:bg-gray-100">Account settings</button>
+                                <button onClick={performLogout} className="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
+                            </div>
+                        )}
+
                     </div>
 
-                   
 
-                    {/* Creating Dropdown menu */}
-                    {menuOpen && (
-                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
-                            <button className="w-full text-left px-4 py-2 hover:bg-gray-100">Account settings</button>
-                            <button onClick={performLogout} className="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
-                        </div>
-                    )}
+
+
 
                 </div>
             </div>
