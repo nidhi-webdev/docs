@@ -185,15 +185,24 @@ function ForGround({ username = ' ' }) {
         alert(`Downloaded ${cardData.uploadedFiles.length} file(s)!`)
     }
 
-    const handleBadgeClick = (e) => {
-        e.stoppropogation()
+    // Drop Down 
+    const handleDropDown = (e) => {
+        e.stopPropagation()
         setMenuOpen(prev => !prev)
+    }
+
+    // Logout 
+    const performLogout = () => {
+        localStorage.removeItem('authToken')
+        localStorage.removeItem('username')
+        localStorage.removeItem('isLoggedIn')
+         window.location.reload()
     }
 
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
 
-            <div onClick ={handleBadgeClick} className='fixed top-5 right-5 z-20'>
+            <div onClick={handleDropDown} className='fixed top-5 right-5 z-20'>
                 <div className="relative">
                     <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm border border-white/10 cursor-pointer select-none">
                         <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
@@ -208,15 +217,17 @@ function ForGround({ username = ' ' }) {
                             <path d="M5 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
 
-                        {/* Creating Dropdown menu */}
-                        {menuOpen && (
-                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
-                                <button className="w-full text-left px-4 py-2 hover:bg-gray-100">Account settings</button>
-                                <button onClick={performLogout} className="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
-                            </div>
-                        )}
+
 
                     </div>
+
+                    {/* Creating Dropdown menu */}
+                    {menuOpen && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
+                            <button className="w-full text-left px-4 py-2 hover:bg-gray-100">Account settings</button>
+                            <button onClick={performLogout} className="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
+                        </div>
+                    )}
 
 
 
