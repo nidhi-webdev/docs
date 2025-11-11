@@ -199,7 +199,13 @@ function ForGround({ username = ' ' }) {
                             <span className="text-sm font-semibold">{username || 'Guest'}</span>
                         </div>
 
+                         <svg className={`w-4 h-4 ml-2 transition-transform ${menuOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+
                     </div>
+
+                   
 
                     {/* Creating Dropdown menu */}
                     {menuOpen && (
@@ -213,7 +219,7 @@ function ForGround({ username = ' ' }) {
             </div>
 
             {/* Add button - next to username badge */}
-            <button onClick={addCard} className='bg-blue-600 text-white px-4 py-2 rounded-2xl fixed top-5 right-45 cursor-pointer hover:bg-blue-700 z-30 shadow-lg'> + Add Cards </button>
+            <button onClick={addCard} className='bg-blue-600 text-white px-4 py-2 rounded-2xl fixed top-5 right-52 cursor-pointer hover:bg-blue-700 z-30 shadow-lg'> + Add Cards </button>
 
             {cards.map((item, idx) =>
                 <Card key={item.id}
