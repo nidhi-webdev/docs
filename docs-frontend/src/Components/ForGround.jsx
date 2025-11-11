@@ -199,8 +199,15 @@ function ForGround({ username = ' ' }) {
                         </div>
                         
                     </div>
+                   
+                    {/* Creating Dropdown menu */}
+                    {menuOpen && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
+                            <button className="w-full text-left px-4 py-2 hover:bg-gray-100">Account settings</button>
+                            <button onClick={performLogout} className="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
+                        </div>
+                    )}
 
-                    
                 </div>
             </div>
 
