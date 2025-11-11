@@ -55,7 +55,8 @@ function ForGround({ username = ' ' }) {
 
     }, [cards])
 
-
+    // Dropdown menu state 
+    const [menuOpen, setMenuOpen] = useState(false)
 
 
 
@@ -122,7 +123,7 @@ function ForGround({ username = ' ' }) {
         setIsModalOpen(false)
     }
 
-    
+
 
     // Handling file upload
     const handleFileUpload = (files, cardData) => {
@@ -186,7 +187,7 @@ function ForGround({ username = ' ' }) {
 
     return (
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
-           
+
             <div className='fixed top-5 right-5 z-20'>
                 <div className="relative">
                     <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm border border-white/10 cursor-pointer select-none">
@@ -197,9 +198,9 @@ function ForGround({ username = ' ' }) {
                             <span className="text-xs opacity-80">Signed in as</span>
                             <span className="text-sm font-semibold">{username || 'Guest'}</span>
                         </div>
-                        
+
                     </div>
-                   
+
                     {/* Creating Dropdown menu */}
                     {menuOpen && (
                         <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden text-black">
