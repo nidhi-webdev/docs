@@ -75,7 +75,9 @@ function ForGround({ username = ' ' }) {
         document.addEventListener('touchstart', onDocClick)
         document.addEventListener('keydown', onKeyDown)
         return () => {
-            second
+            document.addEventListener('mousedown', onDocClick)
+            document.addEventListener('touchstart', onDocClick)
+            document.addEventListener('keydown', onKeyDown)
         }
     }, [menuOpen])
 
