@@ -60,6 +60,19 @@ function ForGround({ username = ' ' }) {
     const menuRef = useRef(null)
 
     // closing dropdown when clicking outside or pressing the Escape
+    useEffect(() => {
+      if(!menuOpen) return  
+    const onDocClick = (e) => {
+     if(menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false)
+     }
+    }
+    
+      return () => {
+        second
+      }
+    }, [third])
+    
 
 
     // Adding card Functionality 
