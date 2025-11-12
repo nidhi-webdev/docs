@@ -226,7 +226,7 @@ function ForGround({ username = ' ' }) {
         <div ref={ref} className='fixed top-0 left-0 z-[3] w-full h-full bg-sky-800/50 flex gap-10 flex-wrap p-5'>
 
             <div onClick={handleDropDown} className='fixed top-5 right-5 z-20'>
-                <div className="relative">
+                <div className="relative" ref={menuRef}>
                     <div className="flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm border border-white/10 cursor-pointer select-none">
                         <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
                             {(username || 'G')[0]?.toUpperCase()}
