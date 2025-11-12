@@ -71,11 +71,13 @@ function ForGround({ username = ' ' }) {
             if (e.key === 'Escape')
                 setMenuOpen(false)
         }
-
+        document.addEventListener('mousedown', onDocClick)
+        document.addEventListener('touchstart', onDocClick)
+        document.addEventListener('keydown', onKeyDown)
         return () => {
             second
         }
-    }, [third])
+    }, [menuOpen])
 
 
 
