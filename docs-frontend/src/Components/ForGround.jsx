@@ -57,7 +57,9 @@ function ForGround({ username = ' ' }) {
 
     // Dropdown menu state 
     const [menuOpen, setMenuOpen] = useState(false)
+    const menuRef = useRef(null)
 
+    // closing dropdown when clicking outside or pressing the Escape
 
 
     // Adding card Functionality 
@@ -196,7 +198,7 @@ function ForGround({ username = ' ' }) {
         localStorage.removeItem('authToken')
         localStorage.removeItem('username')
         localStorage.removeItem('isLoggedIn')
-         window.location.reload()
+        window.location.reload()
     }
 
     return (
