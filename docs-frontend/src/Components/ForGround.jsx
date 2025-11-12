@@ -67,7 +67,7 @@ function ForGround({ username = ' ' }) {
                 setMenuOpen(false)
             }
         }
-        const onKeyDown = () => {
+        const onKeyDown = (e) => {
             if (e.key === 'Escape')
                 setMenuOpen(false)
         }
